@@ -1,52 +1,6 @@
-<includeonly><span class="{{{1|}}}" style="{{#if:{{{2|}}}|font-size:{{{2|}}};|}}{{#if:{{{3|}}}|color:{{{3|}}};|}}vertical-align:{{#if:{{{4|}}}|vertical-align:{{{4|}}};|text-top}};></span></includeonly><noinclude>
-<templatedata>
-{
-	"params": {
-		"1": {
-			"label": {
-				"en": "Icon css class",
-				"de": "Icon css-Klasse"
-			},
-			"required": true
-		},
-		"2": {
-			"label": {
-				"en": "Font-size",
-				"de": "Schriftgöße"
-			},
-			"example": {
-				"en": "0.9em; 1.5em",
-				"de": "0.9em, 1.5em"
-			},
-			"suggested": true
-		},
-		"3": {
-			"label": {
-				"en": "Color",
-				"de": "Farbe"
-			},
-			"example": {
-				"en": "blue, #0059b3",
-				"de": "blue, #0059b3"
-			},
-			"suggested": true
-		},
-		"4": {
-			"label": {
-				"en": "Vertical alignment",
-				"de": "Vertikale Ausrichtung"
-			},
-			"example": {
-				"en": "text-bottom",
-				"de": "text-bottom"
-			},
-			"suggested": true,
-			"default": {}
-		}
-	},
-	"description": {
-		"en": "Insert icon",
-		"de": "Icon einfügen"
-	}
-}
-</templatedata></noinclude>
+<includeonly>
+<div>
+<span class="{{{1|}}}" style="{{#if:{{{2|}}}|font-size:{{{2|}}};|}}{{#if:{{{3|}}}|color:{{{3|}}};|}}vertical-align:{{#if:{{{4|}}}|vertical-align:{{{4|}}};|text-top}};>
+</span>
+</div>
+</includeonly>
