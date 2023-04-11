@@ -180,7 +180,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerContextItem = f
 	ext.contentdroplets.ui[ classname ].static.name = this.getKey();
 	ext.contentdroplets.ui[ classname ].static.title = this.getName();
 	ext.contentdroplets.ui[ classname ].static.label = this.getName();
-	ext.contentdroplets.ui[ classname ].static.icon = this.getIcon() || 'specialPages';
+	ext.contentdroplets.ui[ classname ].static.icon = 'contentDroplet';
 	ext.contentdroplets.ui[ classname ].static.modelClasses = [
 		ext.contentdroplets.dm[ this.getClassname() ],
 		ext.contentdroplets.dm[ this.getClassname( 'Block' ) ],

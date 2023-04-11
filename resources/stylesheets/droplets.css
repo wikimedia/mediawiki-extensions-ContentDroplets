@@ -22,3 +22,6 @@
 .droplet .icon-droplet.droplet-code {
 	background-image: url( './../images/contentdroplets-code-icon.svg' );
 }
+.oo-ui-icon-contentDroplet {
+	background-image: url( './../images/contentdroplet.svg' );
+}
