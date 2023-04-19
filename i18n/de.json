@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
+			"McDutchie",
 			"Mschlindwein"
 		]
 	},
-	"contentdroplets-desc": "Deutsche Beschreibung von ContentDroplets",
+	"contentdroplets-desc": "VisualEditor-Integration zum Einfügen vordefinierter Inhaltsausschnitte",
 	"contentdroplets-droplet-text-box-success": "Erfolgsmeldung",
-	"contentdroplets-droplet-text-box-warning": "Warnungsmeldung",
+	"contentdroplets-droplet-text-box-warning": "Warnmeldung",
 	"contentdroplets-droplet-text-box-important": "Wichtige Meldung",
 	"contentdroplets-droplet-text-box-note": "Notiz",
 	"contentdroplets-droplet-text-box-tip": "Tipp",

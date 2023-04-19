@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sjoerddebruin"
+		]
+	},
+	"contentdroplets-category-label-content": "Inhoud",
+	"contentdroplets-category-label-media": "Media",
+	"contentdroplets-category-label-visualization": "Visualisatie",
+	"contentdroplets-category-label-data": "Gegevens",
+	"contentdroplets-category-label-lists": "Lijsten",
+	"contentdroplets-category-label-export": "Exporteren",
+	"contentdroplets-droplet-text-box-text-label": "Tekst",
+	"contentdroplets-droplet-icon-font-size-label": "Lettergrootte"
+}
