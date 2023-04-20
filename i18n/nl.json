@@ -1,15 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mainframe98",
 			"Sjoerddebruin"
 		]
 	},
+	"contentdroplets-droplet-text-box-success": "Succesbericht",
+	"contentdroplets-droplet-text-box-warning": "Waarschuwingsbericht",
+	"contentdroplets-droplet-text-box-important": "Belangrijk bericht",
+	"contentdroplets-droplet-text-box-note": "Opmerking",
+	"contentdroplets-droplet-text-box-tip": "Tip",
+	"contentdroplets-droplet-text-box-neutral": "Bericht",
+	"contentdroplets-category-label-featured": "Uitgelicht",
 	"contentdroplets-category-label-content": "Inhoud",
 	"contentdroplets-category-label-media": "Media",
 	"contentdroplets-category-label-visualization": "Visualisatie",
 	"contentdroplets-category-label-data": "Gegevens",
+	"contentdroplets-category-label-navigation": "Navigatie",
 	"contentdroplets-category-label-lists": "Lijsten",
 	"contentdroplets-category-label-export": "Exporteren",
+	"contentdroplets-category-label-all": "Alle",
 	"contentdroplets-droplet-text-box-text-label": "Tekst",
-	"contentdroplets-droplet-icon-font-size-label": "Lettergrootte"
+	"contentdroplets-droplet-text-box-show-icon-label": "Pictogram tonen",
+	"contentdroplets-droplet-icon-font-size-label": "Lettergrootte",
+	"contentdroplets-droplet-icon-color-label": "Kleur",
+	"contentdroplets-droplet-icon-name": "Pictogram",
+	"contentdroplets-droplet-icon-description": "Voegt een pictogram in",
+	"contentdroplet-dialog-action-close": "Annuleren",
+	"contentdroplet-dialog-action-insert": "Invoegen"
 }

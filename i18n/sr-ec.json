@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"contentdroplets-droplet-text-box-note": "Напомена",
+	"contentdroplets-droplet-text-box-tip": "Савет",
+	"contentdroplets-category-label-content": "Садржај",
+	"contentdroplets-category-label-data": "Подаци",
+	"contentdroplets-category-label-export": "Извоз",
+	"contentdroplets-category-label-all": "Све",
+	"contentdroplets-droplet-text-box-text-label": "Текст",
+	"contentdroplets-droplet-icon-name": "Икона",
+	"contentdroplet-dialog-action-close": "Откажи",
+	"contentdroplet-dialog-action-insert": "Уметни"
+}
