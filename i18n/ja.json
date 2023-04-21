@@ -12,8 +12,10 @@
 	"contentdroplets-category-label-export": "エクスポート",
 	"contentdroplets-category-label-all": "すべて",
 	"contentdroplets-droplet-text-box-text-label": "テキスト",
+	"contentdroplets-droplet-icon-font-size-label": "フォントサイズ",
 	"contentdroplets-droplet-icon-color-label": "色",
 	"contentdroplets-droplet-icon-name": "アイコン",
 	"contentdroplet-dialog-action-close": "キャンセル",
+	"contentdroplet-dialog-action-insert": "挿入",
 	"contentdroplets-droplet-code-name": "コード"
 }
