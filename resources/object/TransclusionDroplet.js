@@ -48,6 +48,16 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.updateMWData =
 			if ( typeof template.params[ key ] === 'string' ) {
 				template.params[ key ] = { wt: template.params[ key ] };
 			}
+			// necessary for checkboxes and templates with yes and no
+			if ( typeof template.params[ key ] === 'boolean' ) {
+				if ( template.params[ key ] === true ) {
+					template.params[ key ] = 'yes';
+				} else {
+					template.params[ key ] = 'no';
+				}
+				template.params[ key ] = { wt: template.params[ key ].toString() };
+			}
+
 			// eslint-disable-next-line no-prototype-builtins
 			if ( newData.hasOwnProperty( key ) ) {
 				template.params[ key ] = { wt: newData[ key ] };
