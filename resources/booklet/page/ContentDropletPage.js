@@ -44,4 +44,7 @@ ext.contentdroplets.ui.ContentDropletPage.prototype.setupWidget = function () {
 	} );
 
 	this.$element.append( this.widgetsLayout.$element );
+	this.$element.attr( 'role', 'listbox' );
+	this.$element.attr( 'aria-multiselectable', 'false' );
+	this.$element.attr( 'tabindex', 0 );
 };

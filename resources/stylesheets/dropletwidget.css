@@ -5,9 +5,8 @@
 	width: 48%;
 }
 
-.droplet:hover {
-	background-color: #e9e9ee;
-}
+.droplet:hover,
+.droplet:focus,
 .droplet.droplet-selected {
 	background-color: #e9e9ee;
 }

@@ -6,6 +6,7 @@ ext.contentdroplets.ui.DropletWidget = function ( cfg ) {
 	this.module = cfg.module || '';
 
 	OO.EventEmitter.call( this );
+	OO.ui.mixin.TabIndexedElement.call( this, cfg );
 
 	this.iconElement = new OO.ui.Widget( {
 		content: $( '<div></div>' ),
@@ -28,11 +29,23 @@ ext.contentdroplets.ui.DropletWidget = function ( cfg ) {
 	this.$element.addClass( 'droplet' );
 	this.$element.append( this.container.$element );
 
-	this.$element.on( 'click', this.select.bind( this ) );
+	this.$element.on( {
+		click: this.select.bind( this ),
+		keypress: this.onItemKeyPress.bind( this )
+	} );
 };
 
 OO.inheritClass( ext.contentdroplets.ui.DropletWidget, OO.ui.Widget );
 OO.mixinClass( ext.contentdroplets.ui.DropletWidget, OO.EventEmitter );
+OO.mixinClass( ext.contentdroplets.ui.DropletWidget, OO.ui.mixin.TabIndexedElement );
+
+ext.contentdroplets.ui.DropletWidget.prototype.onItemKeyPress = function ( e ) {
+	if ( e.which === OO.ui.Keys.ENTER ) {
+		this.$element.addClass( 'droplet-selected' );
+		this.$element.attr( 'aria-selected', true );
+		this.emit( 'selected', this.droplet.getKey(), this );
+	}
+};
 
 ext.contentdroplets.ui.DropletWidget.prototype.select = function () {
 	this.$element.addClass( 'droplet-selected' );
@@ -41,6 +54,7 @@ ext.contentdroplets.ui.DropletWidget.prototype.select = function () {
 
 ext.contentdroplets.ui.DropletWidget.prototype.deselect = function () {
 	this.$element.removeClass( 'droplet-selected' );
+	this.$element.attr( 'aria-selected', false );
 	this.emit( 'deselected', this.droplet.getKey() );
 };
 

@@ -279,6 +279,13 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 		}, this );
 	};
 
+	ext.contentdroplets.ui[ classname ].prototype.getReadyProcess = function ( data ) {
+		return ext.contentdroplets.ui[ classname ].super.prototype.getReadyProcess.call( this, data )
+		.next( function () {
+			this.focus();
+		}, this );
+	};
+
 	ext.contentdroplets.ui[ classname ].prototype.getBodyHeight = function () {
 		return this.$element.find( '.oo-ui-window-body' )[ 0 ].scrollHeight + 10;
 	};

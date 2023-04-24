@@ -46,6 +46,10 @@ ext.contentdroplets.ui.ContentDropletsDialog.prototype.initialize = function () 
 	} );
 	this.content.init();
 	this.$body.append( this.content.$element );
+
+	this.tabIndexScope = new ve.ui.TabIndexScope( {
+		root: this.$content
+	} );
 };
 
 ext.contentdroplets.ui.ContentDropletsDialog.prototype.getActionProcess = function ( action ) {
@@ -67,7 +71,8 @@ ext.contentdroplets.ui.ContentDropletsDialog.prototype.getActionProcess = functi
 				ve.init.target.getSurface().executeCommand( 'dropletinsert' );
 				ve.ui.wikitextCommandRegistry.unregister( 'dropletinsert' );
 			}
-
+			// necessary for accessibility with tabs of the following inspector 
+			ve.init.target.getSurface().getModel().getFragment().adjustLinearSelection( -1 );
 			this.close( { action: action } );
 		}, this );
 	}
