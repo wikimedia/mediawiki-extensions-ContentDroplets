@@ -4,13 +4,18 @@
 			"Fitoschido"
 		]
 	},
+	"contentdroplets-desc": "Integración del VisualEditor para insertar fragmentos de contenido predefinidos",
 	"contentdroplets-droplet-text-box-success": "Mensaje de éxito",
 	"contentdroplets-droplet-text-box-warning": "Mensaje de alerta",
 	"contentdroplets-droplet-text-box-important": "Mensaje importante",
 	"contentdroplets-droplet-text-box-note": "Nota",
 	"contentdroplets-droplet-text-box-tip": "Consejo",
 	"contentdroplets-droplet-text-box-neutral": "Mensaje",
+	"contentdroplets-droplet-text-box-success-desc": "Añade un panel colorido para una nota de éxito",
 	"contentdroplets-droplet-text-box-warning-desc": "Añade un panel colorido para una nota de alerta",
+	"contentdroplets-droplet-text-box-important-desc": "Añade un panel colorido para una nota importante",
+	"contentdroplets-droplet-text-box-note-desc": "Añade un panel colorido para una nota",
+	"contentdroplets-droplet-text-box-tip-desc": "Añade un panel colorido para una sugerencia",
 	"contentdroplets-droplet-text-box-neutral-desc": "Añade un panel de texto",
 	"contentdroplets-category-label-featured": "En destaque",
 	"contentdroplets-category-label-content": "Contenido",
@@ -31,7 +36,10 @@
 	"contentdroplets-droplet-icon-orientation-label": "Orientación vertical",
 	"contentdroplets-droplet-icon-name": "Icono",
 	"contentdroplets-droplet-icon-description": "Inserta un icono",
+	"contentdroplet-droplets-dialog-title": "Gotitas de contenido",
 	"contentdroplet-dialog-action-close": "Cancelar",
 	"contentdroplet-dialog-action-insert": "Insertar",
-	"contentdroplets-droplet-code-name": "Código"
+	"contentdroplets-droplet-code-name": "Código",
+	"contentdroplets-droplet-code-desc": "Sección resaltada para ejemplos de código",
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Buscar gotitas de contenido"
 }
