@@ -2,12 +2,10 @@
 	"root": true,
 	"extends": [
 		"wikimedia/client",
-		"wikimedia/mediawiki"
+		"wikimedia/mediawiki",
+		"wikimedia/jquery"
 	],
 	"globals": {
-		"$": "readonly",
-		"OO": "readonly",
-		"mw": "readonly",
 		"ext": "readonly",
 		"ve": "readonly"
 	},
@@ -64,6 +62,8 @@
 		"no-prototype-builtins": "warn",
 		"mediawiki/msg-doc": "warn",
 		"new-cap": "warn",
-		"semi-style": "warn"
+		"semi-style": "warn",
+		"no-jquery/no-parse-html-literal": "warn",
+		"no-jquery/no-class-state": "warn"
 	}
 }

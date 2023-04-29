@@ -68,7 +68,7 @@ abstract class TemplateDroplet implements IDropletDescription {
 	/**
 	 * @inheritDoc
 	 */
-	public function getVeCommand() : ?string {
+	public function getVeCommand(): ?string {
 		return null;
 	}
 }
