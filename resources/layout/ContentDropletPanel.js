@@ -138,6 +138,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.onInput = function ( input 
 		allPage.removeFilter();
 	}
 	this.bookletLayout.setPage( '_all' );
+	this.searchWidget.focus();
 };
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.resetSearch = function () {
