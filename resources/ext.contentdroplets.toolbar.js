@@ -34,5 +34,10 @@ ve.ui.commandRegistry.register(
 );
 
 ve.ui.sequenceRegistry.register(
-	new ve.ui.Sequence( 'wikitextTemplate', 'dropletFromSequence', '<<', 2 )
+	new ve.ui.Sequence( 'contentDroplet', 'dropletFromSequence', '<<', 2 )
 );
+
+ve.ui.commandHelpRegistry.register( 'insert', 'template', {
+	sequences: [ 'contentDroplet' ],
+	label: OO.ui.deferMsg( 'contentdroplet-droplets-dialog-title' )
+} );
