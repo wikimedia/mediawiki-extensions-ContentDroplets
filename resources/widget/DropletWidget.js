@@ -9,6 +9,7 @@ ext.contentdroplets.ui.DropletWidget = function ( cfg ) {
 	OO.ui.mixin.TabIndexedElement.call( this, cfg );
 
 	this.iconElement = new OO.ui.Widget( {
+		// eslint-disable-next-line no-jquery/no-parse-html-literal
 		content: $( '<div></div>' ),
 		classes: [ 'icon-droplet', this.droplet.getIcon() ] } );
 

@@ -7,7 +7,8 @@
 	],
 	"globals": {
 		"ext": "readonly",
-		"ve": "readonly"
+		"ve": "readonly",
+		"OO": "readonly"
 	},
 	"rules": {
 		"space-before-blocks": "warn",

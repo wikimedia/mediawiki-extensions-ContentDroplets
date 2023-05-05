@@ -290,8 +290,9 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 	};
 
 	ext.contentdroplets.ui[ classname ].prototype.getReadyProcess = function ( data ) {
-		return ext.contentdroplets.ui[ classname ].super.prototype.getReadyProcess.call( this, data )
-		.next( function () {
+		return ext.contentdroplets.ui[ classname ].super.prototype.getReadyProcess.call(
+			this, data
+		).next( function () {
 			this.focus();
 		}, this );
 	};

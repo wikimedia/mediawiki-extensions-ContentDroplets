@@ -66,6 +66,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.createPage =
 	function ( categoryKey, categoryDesc, dropletSource ) {
 		var page;
+		dropletSource = this.sortAlphabetically( dropletSource );
 		if ( categoryKey === '_all' ) {
 			page = new ext.contentdroplets.ui.AllDropletsPage( categoryDesc.label, dropletSource );
 		} else {
@@ -146,3 +147,26 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.resetSearch = function () {
 	this.searchWidget.setValue( '' );
 	this.bookletLayout.setPage( page );
 };
+
+ext.contentdroplets.ui.ContentDropletPanel.prototype.sortAlphabetically =
+	function ( dropletSource ) {
+		var ordered = {};
+		Object.keys( dropletSource ).sort( function ( a, b ) {
+			var nameA = dropletSource[ a ].name.toLowerCase(),
+				nameB = dropletSource[ b ].name.toLowerCase();
+			if ( nameA < nameB ) {
+				// nameA comes before nameB in alphabetical order
+				return -1;
+			}
+			if ( nameA > nameB ) {
+				// nameA comes after nameB in alphabetical order
+				return 1;
+			}
+			// names are equal
+			return 0;
+		} ).forEach( function ( key ) {
+			ordered[ key ] = dropletSource[ key ];
+		} );
+
+		return ordered;
+	};

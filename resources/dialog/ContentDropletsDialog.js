@@ -71,7 +71,7 @@ ext.contentdroplets.ui.ContentDropletsDialog.prototype.getActionProcess = functi
 				ve.init.target.getSurface().executeCommand( 'dropletinsert' );
 				ve.ui.wikitextCommandRegistry.unregister( 'dropletinsert' );
 			}
-			// necessary for accessibility with tabs of the following inspector 
+			// necessary for accessibility with tabs of the following inspector
 			ve.init.target.getSurface().getModel().getFragment().adjustLinearSelection( -1 );
 			this.close( { action: action } );
 		}, this );
@@ -82,6 +82,7 @@ ext.contentdroplets.ui.ContentDropletsDialog.prototype.getActionProcess = functi
 };
 
 ext.contentdroplets.ui.ContentDropletsDialog.prototype.getBodyHeight = function () {
+	// eslint-disable-next-line no-jquery/no-class-state
 	if ( !this.$errors.hasClass( 'oo-ui-element-hidden' ) ) {
 		return this.$element.find( '.oo-ui-processDialog-errors' )[ 0 ].scrollHeight;
 	}
