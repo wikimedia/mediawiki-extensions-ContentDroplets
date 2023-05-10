@@ -81,6 +81,11 @@ ext.contentdroplets = {
 					config.key = key;
 					dropletClass = ext.contentdroplets.registry.lookup( key );
 					if ( !dropletClass ) {
+						if ( config.content.indexOf( 'target' ) !== -1 ) {
+							instances[ key ] =
+								new ext.contentdroplets.object.TransclusionDroplet( config );
+							continue;
+						}
 						instances[ key ] = new ext.contentdroplets.object.Droplet( config );
 					} else {
 						// eslint-disable-next-line new-cap
