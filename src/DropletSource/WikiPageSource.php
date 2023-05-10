@@ -6,7 +6,8 @@ namespace MediaWiki\Extension\ContentDroplets\DropletSource;
 
 use InvalidArgumentException;
 use JsonContent;
-use MediaWiki\Extension\ContentDroplets\Droplet\GenericDroplet;
+use MediaWiki\Extension\ContentDroplets\Droplet\CustomTagDroplet;
+use MediaWiki\Extension\ContentDroplets\Droplet\CustomTemplateDroplet;
 use MediaWiki\Extension\ContentDroplets\IDropletSource;
 use WikiPage;
 
@@ -52,16 +53,50 @@ class WikiPageSource implements IDropletSource {
 	private function makeDroplets( object $json ): array {
 		$droplets = [];
 		foreach ( $json as $key => $data ) {
-			$droplets[$key] = new GenericDroplet(
+			if ( $data->type == 'tag' ) {
+				// for tags specified in WikiPage
+				$droplets[$key] = new CustomTagDroplet(
+					$data->name,
+					$data->description,
+					$data->icon,
+					$data->tagname,
+					$this->encode( $data->attributes ),
+					$data->hasContent,
+					$data->veCommand,
+					$data->type,
+					$data->categories,
+					$data->rlModules
+				);
+				continue;
+			}
+			$droplets[$key] = new CustomTemplateDroplet(
 				$data->name,
 				$data->description,
 				$data->icon,
-				$data->content,
+				$data->template,
+				$this->encode( $data->params ),
+				'template',
 				$data->categories,
 				$data->rlModules
 			);
 		}
 
 		return $droplets;
+	}
+
+	/**
+	 *
+	 * @param array $params
+	 * @return array
+	 */
+	private function encode( $params ) {
+		$formatted = [];
+		$params = json_decode( json_encode( $params ), true );
+		foreach ( $params as $param ) {
+			foreach ( $param as $key => $value ) {
+				$formatted[ $key ] = $value;
+			}
+		}
+		return $formatted;
 	}
 }
