@@ -7,7 +7,7 @@ You can register a droplet using `ContentDroplets/Droplets` attribute. This hold
 of key => value pairs, where key is a unique droplet key, and value is an ObjectFactory spec
 
 ## GlobalVariable
-You can use a global variable droplet registry in the same as the attribute registry.
+You can use a global variable droplet registry in the same ways as the attribute registry.
 Variable is `$wgContentDropletsDroplets` and values are same key/value pairs as for attribute.
 
 ## Wikipage
@@ -20,7 +20,7 @@ This page holds JSON definition of droplets, eg:
 			"name": "Droplet1",
 			"description": "message-key",
 			"icon": "check",
-			"rlModule": "",
+			"rlModules": [],
 			"categories": [
 				"content"
 			],
