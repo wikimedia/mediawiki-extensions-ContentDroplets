@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alshamiri1"
+		]
+	},
+	"contentdroplets-droplet-text-box-success": "نجاح رسالة",
+	"contentdroplets-droplet-text-box-warning": "رسالة تحذير",
+	"contentdroplets-droplet-text-box-important": "رسالة مهمة",
+	"contentdroplets-droplet-text-box-note": "ملاحظة"
+}
