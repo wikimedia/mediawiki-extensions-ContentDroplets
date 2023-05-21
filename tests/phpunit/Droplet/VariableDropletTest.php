@@ -29,7 +29,7 @@ class VariableDropletTest extends TestCase {
 	/**
 	 * @return array[]
 	 */
-	public function provideData() {
+	public static function provideData() {
 		return [
 			'no-params' => [
 				'dummy',

@@ -28,7 +28,7 @@ class BehaviourSwitchDropletTest extends TestCase {
 	/**
 	 * @return array[]
 	 */
-	public function provideData() {
+	public static function provideData() {
 		return [
 			'lowercase' => [
 				'dummy',
