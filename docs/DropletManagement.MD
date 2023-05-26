@@ -13,18 +13,41 @@ Variable is `$wgContentDropletsDroplets` and values are same key/value pairs as 
 ## Wikipage
 Droplets can also be registered using the on-wiki specification. Specify droplets on `MediaWiki:ContentDroplets.json` page.
 
-This page holds JSON definition of droplets, eg:
+This page holds JSON definition of droplets, eg for templates and tags:
 
 	{
-		"myDroplet1": {
-			"name": "Droplet1",
+		"myTemplateDroplet": {
+			"name": "TemplateDroplet",
+			"type": "template",
+			"template": "Lorem",
+			"params": [
+				{ "color": "blue" },
+				{ "count": 5 }
+			],
 			"description": "message-key",
 			"icon": "check",
 			"rlModules": [],
 			"categories": [
 				"content"
 			],
-			"content": "<myDroplet></myDroplet>"
+			"content": "{{Lorem|color="blue"|count=5}}"
+		},
+		"myTagDroplet": {
+			"name": "TagDroplet",
+			"type": "tag",
+			"tagname": "Lorem",
+			"attributes": [
+				{ "color": "blue" }
+			],
+			"hasContent": false,
+			"veCommand": "droplet",
+			"description": "message-key",
+			"icon": "check",
+			"rlModules": [],
+			"categories": [
+				"content"
+			],
+			"content": "<myDroplet color="blue"/>"
 		}
 	}
 
