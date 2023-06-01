@@ -1,6 +1,6 @@
 <includeonly>
 <div>
-<span class="{{{1|}}}" style="{{#if:{{{2|}}}|font-size:{{{2|}}};|}}{{#if:{{{3|}}}|color:{{{3|}}};|}}vertical-align:{{#if:{{{4|}}}|vertical-align:{{{4|}}};|text-top}};>
+<span class="{{{1|bi bi-clock}}}" style="{{#if:{{{2|}}}|font-size:{{{2|}}};|}}{{#if:{{{3|}}}|color:{{{3|}}};|}}vertical-align:{{#if:{{{4|}}}|vertical-align:{{{4|}}};|text-top}};>
 </span>
 </div>
 </includeonly>
