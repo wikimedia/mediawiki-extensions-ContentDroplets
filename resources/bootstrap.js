@@ -126,3 +126,9 @@ mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init', function () {
 	} );
 
 } );
+
+mw.hook( 've.collabpad.DropletsActivation' ).add( function () {
+	ve.init.mw.CollabTarget.static.toolbarGroups.push( {
+		include: [ 'contentdroplet-toolbar' ]
+	} );
+} );
