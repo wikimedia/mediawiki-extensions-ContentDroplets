@@ -113,7 +113,8 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = fun
 
 	ext.contentdroplets.dm[ classname ].static.name = 'contentDroplet/' + classname;
 	ext.contentdroplets.dm[ classname ].static.matchTagNames = null;
-	ext.contentdroplets.dm[ classname ].static.tagName = 'div';
+	ext.contentdroplets.dm[ classname ].static.tagName = 'span';
+	ext.contentdroplets.dm[ classname ].static.isContent = true;
 	ext.contentdroplets.dm[ classname ].static.matchRdfaTypes = [ 'mw:Transclusion' ];
 	ext.contentdroplets.dm[ classname ].static.matchFunction = this.matchNode.bind( this );
 	if ( !suffix ) {
@@ -174,7 +175,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerContentEditable
 		OO.inheritClass( ext.contentdroplets.ce[ classname ], ve.ce.MWTransclusionNode );
 
 		ext.contentdroplets.ce[ classname ].static.name = 'contentDroplet/' + classname;
-		ext.contentdroplets.ce[ classname ].static.tagName = 'div';
+		ext.contentdroplets.ce[ classname ].static.tagName = 'span';
 		ext.contentdroplets.ce[ classname ].static.primaryCommandName = this.getClassname( 'Command' );
 		ve.ce.nodeFactory.register( ext.contentdroplets.ce[ classname ] );
 	};

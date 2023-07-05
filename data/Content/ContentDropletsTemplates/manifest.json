@@ -17,10 +17,11 @@
 		"lang": "en",
 		"target_title": "Template:Icon",
 		"content_path": "/pages/Template/Icon.wiki",
-		"sha1": "466502f9138868abf623833c76ed36039612d610",
+		"sha1": "ca7a1226ee145ff53d25457d27aaadb1d6a95b34",
 		"old_sha1": [
 			"8fca523ca12b068e7ddff20606f3164daeea9bc9",
-			"3b6f578c30e7c2da384b9bd331916d61697cd37a"
+			"3b6f578c30e7c2da384b9bd331916d61697cd37a",
+			"466502f9138868abf623833c76ed36039612d610"
 		]
 	}
 }
