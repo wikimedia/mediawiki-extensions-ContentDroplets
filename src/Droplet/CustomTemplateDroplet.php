@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\ContentDroplets\Droplet;
 
+use FormatJson;
 use Message;
 use RawMessage;
 
@@ -15,8 +16,6 @@ class CustomTemplateDroplet extends TemplateDroplet {
 	private $icon;
 	/** @var string */
 	private $target;
-	/** @var string */
-	private $content;
 	/** @var array */
 	private $categories;
 	/** @var array */
@@ -56,6 +55,56 @@ class CustomTemplateDroplet extends TemplateDroplet {
 	 */
 	protected function getTarget(): string {
 		return $this->target;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getContent(): string {
+		$target = $this->getTarget();
+		$params = $this->getParams();
+		$params = $this->formatParams( $params );
+
+		if ( empty( $params ) ) {
+			return FormatJson::encode( [
+				'target' => [
+					'href' => "./Template:$target",
+					'wt' => $target
+				]
+			] );
+		}
+
+		return FormatJson::encode( [
+			'target' => [
+				'href' => "./Template:$target",
+				'wt' => $target
+			],
+			'params' => $params
+		] );
+	}
+
+	/**
+	 * @param array $params
+	 * @return array
+	 */
+	private function formatParams( array $params ) {
+		if ( $this->isAssoc( $params ) ) {
+			return $params;
+		}
+		$res = [];
+		foreach ( $params as $index => $param ) {
+			$res[$index + 1] = $param;
+		}
+		return $res;
+	}
+
+	/**
+	 * Check if array is associative
+	 * @param array $params
+	 * @return bool
+	 */
+	private function isAssoc( array $params ) {
+		return array_keys( $params ) !== range( 0, count( $params ) - 1 );
 	}
 
 	/**
