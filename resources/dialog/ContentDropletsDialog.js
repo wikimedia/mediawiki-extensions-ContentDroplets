@@ -40,7 +40,6 @@ ext.contentdroplets.ui.ContentDropletsDialog.prototype.initialize = function () 
 			this.popPending();
 			// select menu item after pages are added
 			this.content.bookletLayout.outlineSelectWidget.selectItemByData( 'featured' );
-			this.actions.setAbilities( { insert: false } );
 		},
 		dropletSelected: function ( selected ) {
 			this.actions.setAbilities( { insert: !!selected } );
