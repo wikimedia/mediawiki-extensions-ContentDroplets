@@ -40,7 +40,9 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 	} );
 	this.bookletLayout.connect( this, {
 		set: function () {
-			this.selectDroplet( null, null );
+			var currentPage = this.bookletLayout.getCurrentPage();
+			var droplet = currentPage.widgetsLayout.items[0];
+			droplet.select();
 		}
 	} );
 	this.pages = [];
