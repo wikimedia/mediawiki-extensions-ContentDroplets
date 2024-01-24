@@ -3,8 +3,10 @@
 		"lang": "en",
 		"target_title": "Template:Textbox",
 		"content_path": "/pages/Template/Textbox.wiki",
-		"sha1": "ef0c4f677f4040c2aca884e13bc13b619bcaba13",
-		"old_sha1": []
+		"sha1": "83565108195f6e6d11c5be0fac06a72ae2b8f029",
+		"old_sha1": [
+			"ef0c4f677f4040c2aca884e13bc13b619bcaba13"
+		]
 	},
 	"Template:Textbox/styles.css": {
 		"lang": "en",
