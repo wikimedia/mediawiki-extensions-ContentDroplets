@@ -90,6 +90,98 @@ ext.contentdroplets.object.TextBox.prototype.getForm = function ( data ) {
 	return ext.contentdroplets.object.TextBox.parent.prototype.getForm.call( this, data );
 };
 
+ext.contentdroplets.object.TextBox.prototype.registerContentEditable =
+	function ( suffix ) {
+		suffix = suffix || '';
+		// eslint-disable-next-line vars-on-top
+		var droplet = this,
+			classname = this.getClassname( suffix );
+
+		ext.contentdroplets.ce[ classname ] = function ( model, config ) {
+			config = config || {};
+			config.wikitext = droplet.getContent();
+			ext.contentdroplets.ce[ classname ].super.call( this, model, config );
+		};
+		OO.inheritClass( ext.contentdroplets.ce[ classname ], ve.ce.MWTransclusionNode );
+
+		ext.contentdroplets.ce[ classname ].static.name = 'contentDroplet/' + classname;
+		ext.contentdroplets.ce[ classname ].static.tagName = 'div';
+		ext.contentdroplets.ce[ classname ].static.primaryCommandName = this.getClassname( 'Command' );
+		ve.ce.nodeFactory.register( ext.contentdroplets.ce[ classname ] );
+	};
+
+ext.contentdroplets.object.TextBox.prototype.registerDataModel = function ( suffix ) {
+	suffix = suffix || '';
+	// eslint-disable-next-line vars-on-top
+	var classname = this.getClassname( suffix ),
+		droplet = this;
+
+	ext.contentdroplets.dm[ classname ] = function ( config ) {
+		// eslint-disable-next-line no-prototype-builtins
+		if ( !config.attributes.mw.hasOwnProperty( 'parts' ) ) {
+			config.attributes.mw = {
+				parts: [
+					{
+						template: JSON.parse( droplet.getContent() )
+					}
+				]
+			};
+		}
+		ext.contentdroplets.dm[ classname ].super.apply( this, arguments );
+	};
+
+	OO.inheritClass( ext.contentdroplets.dm[ classname ], ve.dm.MWTransclusionNode );
+
+	ext.contentdroplets.dm[ classname ].static.name = 'contentDroplet/' + classname;
+	ext.contentdroplets.dm[ classname ].static.matchTagNames = null;
+	ext.contentdroplets.dm[ classname ].static.tagName = 'div';
+	ext.contentdroplets.dm[ classname ].static.isContent = false;
+	ext.contentdroplets.dm[ classname ].static.matchRdfaTypes = [ 'mw:Transclusion' ];
+	ext.contentdroplets.dm[ classname ].static.matchFunction = this.matchNode.bind( this );
+	if ( !suffix ) {
+		ext.contentdroplets.dm[ classname ].static.blockType = 'contentDroplet/' + this.getClassname( 'Block' );
+		ext.contentdroplets.dm[ classname ].static.inlineType = 'contentDroplet/' + this.getClassname( 'Inline' );
+	}
+
+	ext.contentdroplets.dm[ classname ].static.getWikitext = function ( content ) {
+		var i, len, part, template, param,
+			wikitext = '';
+
+		// eslint-disable-next-line no-prototype-builtins
+		if ( content.hasOwnProperty( 'params' ) ) {
+			content = { parts: [ { template: content } ] };
+		}
+		// Build wikitext from content
+		for ( i = 0, len = content.parts.length; i < len; i++ ) {
+			part = content.parts[ i ];
+			if ( part.template ) {
+				// Template
+				template = part.template;
+				wikitext += '{{' + template.target.wt;
+				for ( param in template.params ) {
+					wikitext += '|' + param + '=' +
+						this.escapeParameter(
+							template.params[ param ].wt ||
+							template.params[ param ]
+						);
+				}
+				wikitext += '}}';
+			} else {
+				// Plain wikitext
+				wikitext += part;
+			}
+		}
+
+		return wikitext;
+	};
+
+	ext.contentdroplets.dm[ classname ].prototype.getWikitext = function () {
+		return ext.contentdroplets.dm[ classname ].static.getWikitext( this.getAttribute( 'mw' ) );
+	};
+	ve.dm.modelRegistry.register( ext.contentdroplets.dm[ classname ] );
+};
+
+
 // Register all droplets that use this class
 // eslint-disable-next-line no-undef, vars-on-top, no-implicit-globals
 var types = require( './textboxtypes.json' ), type;
