@@ -64,6 +64,7 @@
 		"new-cap": "warn",
 		"semi-style": "warn",
 		"no-jquery/no-parse-html-literal": "warn",
-		"no-jquery/no-class-state": "warn"
+		"no-jquery/no-class-state": "warn",
+		"mediawiki/class-doc": "off"
 	}
 }

@@ -44,6 +44,7 @@ ext.contentdroplets.object.CustomInspectorDroplet.prototype.getForm = function (
 				}
 				inputs[ inputKey ].connect( this, {
 					change: function () {
+						// eslint-disable-next-line no-shadow
 						var data = this.modifyFormDataBeforeSubmission( f.getData() );
 						form.emit( 'change', data );
 					}
