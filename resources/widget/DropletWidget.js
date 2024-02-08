@@ -11,7 +11,8 @@ ext.contentdroplets.ui.DropletWidget = function ( cfg ) {
 	this.iconElement = new OO.ui.Widget( {
 		// eslint-disable-next-line no-jquery/no-parse-html-literal
 		content: $( '<div></div>' ),
-		classes: [ 'icon-droplet', this.droplet.getIcon() ] } );
+		classes: [ 'icon-droplet', this.droplet.getIcon() ]
+	} );
 
 	this.content = new OO.ui.Widget( {
 		padded: true,
