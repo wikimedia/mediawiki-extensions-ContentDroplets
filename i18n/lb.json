@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"contentdroplets-droplet-text-box-warning": "Warnmeldung",
@@ -24,5 +25,6 @@
 	"contentdroplets-droplet-icon-name": "Symbol",
 	"contentdroplet-dialog-action-close": "Ofbriechen",
 	"contentdroplet-dialog-action-insert": "Drasetzen",
-	"contentdroplets-droplet-code-name": "Code"
+	"contentdroplets-droplet-code-name": "Code",
+	"contentdroplets-category-label-media": "Medien"
 }
