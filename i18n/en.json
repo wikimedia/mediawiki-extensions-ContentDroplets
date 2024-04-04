@@ -41,5 +41,6 @@
 	"contentdroplet-dialog-action-insert": "Insert",
 	"contentdroplets-droplet-code-name": "Code",
 	"contentdroplets-droplet-code-desc": "Highlighted section for code examples",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "Search for content droplets"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Search for content droplets",
+	"contentdroplets-toolbar-icon-title": "Add content droplets"
 }

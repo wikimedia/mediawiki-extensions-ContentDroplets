@@ -76,7 +76,8 @@
 			"messages": [
 				"contentdroplet-droplets-dialog-title",
 				"contentdroplet-dialog-action-close",
-				"contentdroplet-dialog-action-insert"
+				"contentdroplet-dialog-action-insert",
+				"contentdroplets-toolbar-icon-title"
 			]
 		},
 		"ext.contentdroplets.panel": {
