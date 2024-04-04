@@ -41,5 +41,6 @@
 	"contentdroplet-dialog-action-insert": "Label for action insert",
 	"contentdroplets-droplet-code-name": "Droplet name",
 	"contentdroplets-droplet-code-desc": "Droplet description",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "Placeholder label in search input field"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Placeholder label in search input field",
+	"contentdroplets-toolbar-icon-title": "Title for icon in VisualEditor toolbar"
 }
