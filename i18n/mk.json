@@ -41,5 +41,6 @@
 	"contentdroplet-dialog-action-insert": "Вметни",
 	"contentdroplets-droplet-code-name": "Код",
 	"contentdroplets-droplet-code-desc": "Истакнат оддел за кодни примери",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "Пребарај содржински капки"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Пребарај содржински капки",
+	"contentdroplets-toolbar-icon-title": "Додај содржински капики"
 }
