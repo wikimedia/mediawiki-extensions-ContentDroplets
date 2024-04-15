@@ -41,5 +41,6 @@
 	"contentdroplet-dialog-action-insert": "Vstavi",
 	"contentdroplets-droplet-code-name": "Koda",
 	"contentdroplets-droplet-code-desc": "Označen razdelek za zglede kode",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "Iskanje kapljic vsebine"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Iskanje kapljic vsebine",
+	"contentdroplets-toolbar-icon-title": "Dodajanje kapljic vsebine"
 }
