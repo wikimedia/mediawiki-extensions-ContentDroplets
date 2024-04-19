@@ -65,6 +65,11 @@
 		"semi-style": "warn",
 		"no-jquery/no-parse-html-literal": "warn",
 		"no-jquery/no-class-state": "warn",
-		"mediawiki/class-doc": "off"
+		"mediawiki/class-doc": "off",
+		"es-x/no-object-values": "warn",
+		"prefer-const": "warn",
+		"es-x/no-array-prototype-includes": "warn",
+		"no-constant-binary-expression": "warn",
+		"no-var": "warn"
 	}
 }

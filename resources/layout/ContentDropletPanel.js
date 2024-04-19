@@ -40,7 +40,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 	} );
 	this.bookletLayout.connect( this, {
 		set: function () {
-			var currentPage = this.bookletLayout.getCurrentPage(),
+			const currentPage = this.bookletLayout.getCurrentPage(),
 				droplet = currentPage.widgetsLayout.items[ 0 ];
 			droplet.select();
 		}
@@ -51,8 +51,8 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 
 	ext.contentdroplets.getCategories().done( function ( categories ) {
 		ext.contentdroplets.getDroplets().done( function ( droplets ) {
-			// eslint-disable-next-line vars-on-top
-			for ( var key in categories ) {
+
+			for ( const key in categories ) {
 				// eslint-disable-next-line no-prototype-builtins
 				if ( !categories.hasOwnProperty( key ) ) {
 					continue;
@@ -67,7 +67,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.createPage =
 	function ( categoryKey, categoryDesc, dropletSource ) {
-		var page;
+		let page;
 		dropletSource = this.sortAlphabetically( dropletSource );
 		if ( categoryKey === '_all' ) {
 			page = new ext.contentdroplets.ui.AllDropletsPage( categoryDesc.label, dropletSource );
@@ -94,7 +94,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.selectDroplet =
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.dropletsFromSource =
 	function ( keys, source ) {
-		var filtered = {},
+		let filtered = {},
 			sourceKey;
 		for ( sourceKey in source ) {
 			// eslint-disable-next-line no-prototype-builtins
@@ -109,7 +109,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.dropletsFromSource =
 	};
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.indexDroplets = function ( droplets ) {
-	var key;
+	let key;
 	for ( key in droplets ) {
 		// eslint-disable-next-line no-prototype-builtins
 		if ( !droplets.hasOwnProperty( key ) ) {
@@ -120,7 +120,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.indexDroplets = function ( 
 };
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.onInput = function ( input ) {
-	var toShow = [],
+	let toShow = [],
 		allPage = this.bookletLayout.getPage( '_all' ),
 		key;
 	input = input.toLocaleLowerCase().trim();
@@ -131,7 +131,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.onInput = function ( input 
 			if ( !this.index.hasOwnProperty( key ) ) {
 				continue;
 			}
-			// eslint-disable-next-line no-restricted-syntax
+
 			if ( this.index[ key ].includes( input ) ) {
 				toShow.push( key );
 			}
@@ -145,16 +145,16 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.onInput = function ( input 
 };
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.resetSearch = function () {
-	var page = this.bookletLayout.getCurrentPageName();
+	const page = this.bookletLayout.getCurrentPageName();
 	this.searchWidget.setValue( '' );
 	this.bookletLayout.setPage( page );
 };
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.sortAlphabetically =
 	function ( dropletSource ) {
-		var ordered = {};
+		const ordered = {};
 		Object.keys( dropletSource ).sort( function ( a, b ) {
-			var nameA = dropletSource[ a ].name.toLowerCase(),
+			const nameA = dropletSource[ a ].name.toLowerCase(),
 				nameB = dropletSource[ b ].name.toLowerCase();
 			if ( nameA < nameB ) {
 				// nameA comes before nameB in alphabetical order

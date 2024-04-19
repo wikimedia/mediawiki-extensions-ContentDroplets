@@ -18,7 +18,7 @@ ext.contentdroplets.object.CustomInspectorDroplet.prototype.updateMWData =
 	};
 
 ext.contentdroplets.object.CustomInspectorDroplet.prototype.getForm = function ( data ) {
-	var form = new mw.ext.forms.standalone.Form( {
+	const form = new mw.ext.forms.standalone.Form( {
 		data: data,
 		definition: {
 			buttons: [],
@@ -34,7 +34,7 @@ ext.contentdroplets.object.CustomInspectorDroplet.prototype.getForm = function (
 
 	form.connect( this, {
 		initComplete: function ( f ) {
-			var inputs = f.getItems().inputs,
+			let inputs = f.getItems().inputs,
 				inputKey;
 
 			for ( inputKey in inputs ) {
@@ -45,7 +45,7 @@ ext.contentdroplets.object.CustomInspectorDroplet.prototype.getForm = function (
 				inputs[ inputKey ].connect( this, {
 					change: function () {
 						// eslint-disable-next-line no-shadow
-						var data = this.modifyFormDataBeforeSubmission( f.getData() );
+						const data = this.modifyFormDataBeforeSubmission( f.getData() );
 						form.emit( 'change', data );
 					}
 				} );
