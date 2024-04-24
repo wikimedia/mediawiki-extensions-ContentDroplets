@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alien333",
 			"Verdy p"
 		]
 	},
@@ -41,5 +42,6 @@
 	"contentdroplet-dialog-action-insert": "Insérer",
 	"contentdroplets-droplet-code-name": "Code",
 	"contentdroplets-droplet-code-desc": "Section en surbrillance pour les exemples de code",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "Rechercher des gouttelettes de contenu"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Rechercher des gouttelettes de contenu",
+	"contentdroplets-toolbar-icon-title": "Ajouter des gouttelettes de contenu"
 }
