@@ -43,5 +43,6 @@
 	"contentdroplet-droplets-dialog-title": "Inhoudsdruppels",
 	"contentdroplets-droplet-code-name": "Code",
 	"contentdroplets-droplet-code-desc": "Gemarkeerde sectie voor codevoorbeelden",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "Zoeken naar inhoudsdruppels"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "Zoeken naar inhoudsdruppels",
+	"contentdroplets-toolbar-icon-title": "Inhoudsdruppels toevoegen"
 }
