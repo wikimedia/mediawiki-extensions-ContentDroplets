@@ -3,7 +3,8 @@
 		"authors": [
 			"Mainframe98",
 			"McDutchie",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Siebrand"
 		]
 	},
 	"contentdroplets-desc": "VisualEditor-integratie voor het invoegen van vooraf bepaalde inhoudsfragmenten",
@@ -30,7 +31,7 @@
 	"contentdroplets-category-label-all": "Alle",
 	"contentdroplets-droplet-text-box-header-label": "Koptekst",
 	"contentdroplets-droplet-text-box-text-label": "Tekst",
-	"contentdroplets-droplet-text-box-show-icon-label": "Pictogram tonen",
+	"contentdroplets-droplet-text-box-show-icon-label": "Pictogram weergeven",
 	"contentdroplets-droplet-text-box-type-label": "Type kader",
 	"contentdroplets-droplet-icon-class-label": "CSS-klasse pictogrammen",
 	"contentdroplets-droplet-icon-font-size-label": "Lettergrootte",
