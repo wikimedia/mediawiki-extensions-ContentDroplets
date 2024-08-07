@@ -41,5 +41,6 @@
 	"contentdroplet-dialog-action-insert": "插入",
 	"contentdroplets-droplet-code-name": "代碼",
 	"contentdroplets-droplet-code-desc": "代碼範例的突顯部分",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "搜尋內容片段"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "搜尋內容片段",
+	"contentdroplets-toolbar-icon-title": "添加內容片段"
 }
