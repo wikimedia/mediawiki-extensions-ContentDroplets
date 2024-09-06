@@ -3,6 +3,7 @@
 		"authors": [
 			"Mainframe98",
 			"McDutchie",
+			"Siebrand",
 			"Sjoerddebruin"
 		]
 	},
@@ -22,7 +23,7 @@
 	"contentdroplets-category-label-export": "Exporteren",
 	"contentdroplets-category-label-all": "Alle",
 	"contentdroplets-droplet-text-box-text-label": "Tekst",
-	"contentdroplets-droplet-text-box-show-icon-label": "Pictogram tonen",
+	"contentdroplets-droplet-text-box-show-icon-label": "Pictogram weergeven",
 	"contentdroplets-droplet-icon-font-size-label": "Lettergrootte",
 	"contentdroplets-droplet-icon-color-label": "Kleur",
 	"contentdroplets-droplet-icon-name": "Pictogram",
