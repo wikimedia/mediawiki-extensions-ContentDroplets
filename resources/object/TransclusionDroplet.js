@@ -18,7 +18,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerOverrides = fun
 };
 
 ext.contentdroplets.object.TransclusionDroplet.prototype.matchNode = function ( domElement ) {
-	var data = $( domElement ).data();
+	const data = $( domElement ).data();
 	return this.templateMatches( this.getTemplateFromData( data ) );
 };
 
@@ -32,8 +32,8 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.updateMWData =
 	function ( newData, mwData ) {
 		newData = newData || {};
 
-		// eslint-disable-next-line no-prototype-builtins, vars-on-top
-		var template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
+		// eslint-disable-next-line no-prototype-builtins
+		let template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
 			// eslint-disable-next-line no-prototype-builtins
 			mwData.parts[ 0 ].hasOwnProperty( 'template' ) ) ? mwData.parts[ 0 ].template : null,
 			key;
@@ -73,8 +73,8 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.getTemplateFromData = f
 	if ( !data || !data.hasOwnProperty( 'mw' ) || !data.mw.hasOwnProperty( 'parts' ) ) {
 		return false;
 	}
-	// eslint-disable-next-line vars-on-top
-	var parts = data.mw.parts;
+
+	const parts = data.mw.parts;
 	// eslint-disable-next-line no-prototype-builtins
 	if ( parts.length === 0 || !parts[ 0 ].hasOwnProperty( 'template' ) ) {
 		return false;
@@ -91,8 +91,8 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.toDataElement =
 
 ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = function ( suffix ) {
 	suffix = suffix || '';
-	// eslint-disable-next-line vars-on-top
-	var classname = this.getClassname( suffix ),
+
+	const classname = this.getClassname( suffix ),
 		droplet = this;
 
 	ext.contentdroplets.dm[ classname ] = function ( config ) {
@@ -123,7 +123,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = fun
 	}
 
 	ext.contentdroplets.dm[ classname ].static.getWikitext = function ( content ) {
-		var i, len, part, template, param,
+		let i, len, part, template, param,
 			wikitext = '';
 
 		// eslint-disable-next-line no-prototype-builtins
@@ -163,8 +163,8 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = fun
 ext.contentdroplets.object.TransclusionDroplet.prototype.registerContentEditable =
 	function ( suffix ) {
 		suffix = suffix || '';
-		// eslint-disable-next-line vars-on-top
-		var droplet = this,
+
+		const droplet = this,
 			classname = this.getClassname( suffix );
 
 		ext.contentdroplets.ce[ classname ] = function ( model, config ) {
@@ -181,7 +181,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerContentEditable
 	};
 
 ext.contentdroplets.object.TransclusionDroplet.prototype.registerContextItem = function () {
-	var classname = this.getClassname( 'ContextItem' );
+	const classname = this.getClassname( 'ContextItem' );
 
 	ext.contentdroplets.ui[ classname ] = function () {
 		ext.contentdroplets.ui[ classname ].super.apply( this, arguments );
@@ -203,7 +203,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerContextItem = f
 	}.bind( this );
 
 	ext.contentdroplets.ui[ classname ].prototype.onEditButtonClick = function () {
-		var surface = ve.init.target.getSurface(),
+		const surface = ve.init.target.getSurface(),
 			command = ve.ui.commandRegistry.lookup( this.getClassname( 'Command' ) );
 
 		if ( command ) {
@@ -224,7 +224,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerCommand = funct
 };
 
 ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = function () {
-	var droplet = this,
+	const droplet = this,
 		classname = this.getClassname( 'Inspector' );
 	ext.contentdroplets.ui[ classname ] = function ( config ) {
 		ext.contentdroplets.ui[ classname ].super.call(
@@ -255,7 +255,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 		return ext.contentdroplets.ui[ classname ].super.prototype.getSetupProcess.call(
 			this, data
 		).next( function () {
-			var attributes = this.selectedNode.element.attributes || {},
+			let attributes = this.selectedNode.element.attributes || {},
 				template = droplet.getTemplateFromData( attributes ),
 				params = template.params,
 				form, key;

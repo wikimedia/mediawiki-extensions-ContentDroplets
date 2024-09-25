@@ -8,8 +8,8 @@ ext.contentdroplets.object.Icon.prototype.templateMatches = function ( templateD
 	if ( !templateData ) {
 		return false;
 	}
-	// eslint-disable-next-line vars-on-top
-	var target = templateData.target.wt;
+
+	const target = templateData.target.wt;
 	return target.trim( '\n' ) === 'Icon';
 };
 
@@ -41,8 +41,8 @@ ext.contentdroplets.object.Icon.prototype.getFormItems = function () {
 ext.contentdroplets.object.Icon.prototype.updateMWData = function ( newData, mwData ) {
 	newData = newData || {};
 
-	// eslint-disable-next-line no-prototype-builtins, vars-on-top
-	var template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
+	// eslint-disable-next-line no-prototype-builtins
+	let template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
 		// eslint-disable-next-line no-prototype-builtins
 		mwData.parts[ 0 ].hasOwnProperty( 'template' ) ) ? mwData.parts[ 0 ].template : null,
 		key;

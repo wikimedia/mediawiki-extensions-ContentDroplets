@@ -8,7 +8,7 @@ ext.contentdroplets = {
 	ui: {},
 	api: {
 		getDroplets: function () {
-			var dfd = $.Deferred();
+			const dfd = $.Deferred();
 
 			$.ajax( {
 				method: 'GET',
@@ -38,7 +38,7 @@ ext.contentdroplets = {
 		return this._get( 'categories', noCache );
 	},
 	_get: function ( key, noCache ) {
-		var dfd = $.Deferred();
+		const dfd = $.Deferred();
 
 		// eslint-disable-next-line no-prototype-builtins
 		if ( ext.contentdroplets._cache.hasOwnProperty( key ) && !noCache ) {
@@ -52,10 +52,10 @@ ext.contentdroplets = {
 		return dfd.promise();
 	},
 	_doLoad: function () {
-		var dfd = $.Deferred();
+		const dfd = $.Deferred();
 
 		ext.contentdroplets.api.getDroplets().done( function ( data ) {
-			var instances = {},
+			let instances = {},
 				modules = [ 'ext.forms.standalone' ],
 				droplets = data.droplets,
 				key, config, dropletClass;
@@ -111,7 +111,7 @@ ext.contentdroplets = {
 
 mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init', function () {
 	mw.libs.ve.targetLoader.addPlugin( function () {
-		var dfd = $.Deferred();
+		const dfd = $.Deferred();
 		ext.contentdroplets.getDroplets().done( function () {
 			mw.loader.using( [ 'ext.contentdroplets.ve.toolbar' ], function () {
 				dfd.resolve();
