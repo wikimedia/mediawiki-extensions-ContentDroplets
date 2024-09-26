@@ -303,18 +303,18 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 	};
 
 	ext.contentdroplets.ui[ classname ].prototype.onValueUpdated = function ( promise ) {
-		promise.done( function ( d ) {
+		promise.done( ( d ) => {
 			this.dataToUpdate = d;
 			this.onChange();
-		}.bind( this ) );
+		} );
 	};
 
 	ext.contentdroplets.ui[ classname ].prototype.getActionProcess = function ( action ) {
 		if ( action === 'done' ) {
-			return new OO.ui.Process( function () {
+			return new OO.ui.Process( () => {
 				this.insertOrUpdateNode();
 				this.close( { action: 'done' } );
-			}.bind( this ) );
+			} );
 		}
 
 		return ext.contentdroplets.ui[ classname ].parent.prototype.getActionProcess.call(

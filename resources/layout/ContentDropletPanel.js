@@ -1,5 +1,5 @@
 ext.contentdroplets.ui.ContentDropletPanel = function ( cfg ) {
-	cfg = $.extend( {
+	cfg = Object.assign( {
 		expanded: true,
 		padded: true
 	}, cfg );
@@ -49,8 +49,8 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 
 	this.$element.append( this.bookletLayout.$element );
 
-	ext.contentdroplets.getCategories().done( function ( categories ) {
-		ext.contentdroplets.getDroplets().done( function ( droplets ) {
+	ext.contentdroplets.getCategories().done( ( categories ) => {
+		ext.contentdroplets.getDroplets().done( ( droplets ) => {
 
 			for ( const key in categories ) {
 				// eslint-disable-next-line no-prototype-builtins
@@ -61,8 +61,8 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.setupBooklet = function () 
 			}
 			this.indexDroplets( droplets );
 			this.emit( 'dropletsAdded' );
-		}.bind( this ) );
-	}.bind( this ) );
+		} );
+	} );
 };
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.createPage =
@@ -153,7 +153,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.resetSearch = function () {
 ext.contentdroplets.ui.ContentDropletPanel.prototype.sortAlphabetically =
 	function ( dropletSource ) {
 		const ordered = {};
-		Object.keys( dropletSource ).sort( function ( a, b ) {
+		Object.keys( dropletSource ).sort( ( a, b ) => {
 			const nameA = dropletSource[ a ].name.toLowerCase(),
 				nameB = dropletSource[ b ].name.toLowerCase();
 			if ( nameA < nameB ) {
@@ -166,7 +166,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.sortAlphabetically =
 			}
 			// names are equal
 			return 0;
-		} ).forEach( function ( key ) {
+		} ).forEach( ( key ) => {
 			ordered[ key ] = dropletSource[ key ];
 		} );
 

@@ -69,7 +69,5 @@ ext.contentdroplets.object.CustomInspectorDroplet.prototype.getFormItems = funct
 
 ext.contentdroplets.object.CustomInspectorDroplet.prototype.getClassname = function ( suffix ) {
 	suffix = suffix || '';
-	return this.getKey().split( /[-_]/ ).map( function ( bit ) {
-		return bit.charAt( 0 ).toUpperCase() + bit.slice( 1 );
-	} ).join( '' ) + suffix;
+	return this.getKey().split( /[-_]/ ).map( ( bit ) => bit.charAt( 0 ).toUpperCase() + bit.slice( 1 ) ).join( '' ) + suffix;
 };

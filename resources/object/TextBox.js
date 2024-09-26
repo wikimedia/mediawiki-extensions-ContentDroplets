@@ -70,7 +70,7 @@ ext.contentdroplets.object.TextBox.prototype.modifyFormDataBeforeSubmission =
 	function ( dataPromise ) {
 		// Convert true/false from checkbox control, to yes/no expected by the Textbox template
 		const dfd = $.Deferred();
-		dataPromise.done( function ( data ) {
+		dataPromise.done( ( data ) => {
 			data.icon = data.icon ? 'yes' : 'no';
 			dfd.resolve( data );
 		} ).fail( function () {

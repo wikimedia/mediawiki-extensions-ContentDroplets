@@ -16,9 +16,9 @@ ext.contentdroplets = {
 				data: {},
 				contentType: 'application/json',
 				dataType: 'json'
-			} ).done( function ( response ) {
+			} ).done( ( response ) => {
 				dfd.resolve( response );
-			} ).fail( function ( jgXHR, type, status ) {
+			} ).fail( ( jgXHR, type, status ) => {
 				if ( type === 'error' ) {
 					dfd.reject( {
 						error: jgXHR.responseJSON || jgXHR.responseText
@@ -44,9 +44,9 @@ ext.contentdroplets = {
 		if ( ext.contentdroplets._cache.hasOwnProperty( key ) && !noCache ) {
 			return dfd.resolve( ext.contentdroplets._cache[ key ] ).promise();
 		}
-		this._doLoad().done( function ( data ) {
+		this._doLoad().done( ( data ) => {
 			dfd.resolve( data[ key ] );
-		} ).fail( function ( error ) {
+		} ).fail( ( error ) => {
 			dfd.reject( error );
 		} );
 		return dfd.promise();
@@ -54,7 +54,7 @@ ext.contentdroplets = {
 	_doLoad: function () {
 		const dfd = $.Deferred();
 
-		ext.contentdroplets.api.getDroplets().done( function ( data ) {
+		ext.contentdroplets.api.getDroplets().done( ( data ) => {
 			let instances = {},
 				modules = [ 'ext.forms.standalone' ],
 				droplets = data.droplets,
@@ -70,7 +70,7 @@ ext.contentdroplets = {
 				modules = modules.concat( droplets[ key ].rlModules || [] );
 			}
 
-			mw.loader.using( modules, function () {
+			mw.loader.using( modules, () => {
 				for ( key in droplets ) {
 					// eslint-disable-next-line no-prototype-builtins
 					if ( !droplets.hasOwnProperty( key ) ) {
@@ -95,11 +95,11 @@ ext.contentdroplets = {
 
 				ext.contentdroplets._cache.droplets = instances;
 				dfd.resolve( ext.contentdroplets._cache );
-			}, function () {
+			}, () => {
 				ext.contentdroplets._cache = {};
 				console.error( 'ContentDroplets: Required RL modules failed to load' );
 			} );
-		} ).fail( function ( error ) {
+		} ).fail( ( error ) => {
 			ext.contentdroplets._cache = {};
 			console.error( 'ContentDroplets: ' + error );
 		} );
@@ -109,16 +109,16 @@ ext.contentdroplets = {
 	_cache: {}
 };
 
-mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init', function () {
-	mw.libs.ve.targetLoader.addPlugin( function () {
+mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init', () => {
+	mw.libs.ve.targetLoader.addPlugin( () => {
 		const dfd = $.Deferred();
-		ext.contentdroplets.getDroplets().done( function () {
-			mw.loader.using( [ 'ext.contentdroplets.ve.toolbar' ], function () {
+		ext.contentdroplets.getDroplets().done( () => {
+			mw.loader.using( [ 'ext.contentdroplets.ve.toolbar' ], () => {
 				dfd.resolve();
-			}, function () {
+			}, () => {
 				dfd.reject();
 			} );
-		} ).fail( function () {
+		} ).fail( () => {
 			dfd.reject();
 		} );
 
@@ -127,7 +127,7 @@ mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init', function () {
 
 } );
 
-mw.hook( 've.collabpad.DropletsActivation' ).add( function () {
+mw.hook( 've.collabpad.DropletsActivation' ).add( () => {
 	ve.init.mw.CollabTarget.static.toolbarGroups.push( {
 		include: [ 'contentdroplet-toolbar' ]
 	} );
