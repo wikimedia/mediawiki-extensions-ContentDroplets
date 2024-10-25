@@ -20,7 +20,8 @@ ve.ui.ContentDropletTool.static.commandName = 'contentdroplet-toolbar';
 ve.ui.toolFactory.register( ve.ui.ContentDropletTool );
 
 ve.init.mw.Target.static.toolbarGroups.push( {
-	include: [ 'contentdroplet-toolbar' ]
+	include: [ 'contentdroplet-toolbar' ],
+	classes: [ 've-ui-toolbar-group-content-droplets' ],
 } );
 
 /**
