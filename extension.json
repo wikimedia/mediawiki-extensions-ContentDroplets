@@ -16,7 +16,9 @@
 	},
 	"attributes": {
 		"VisualEditor": {
-			"PluginModules": []
+			"PluginModules": [
+				"ext.contentdroplets.ve.toolbar"
+			]
 		},
 		"ContentDroplets": {
 			"Droplets": {
@@ -68,6 +70,9 @@
 			"scripts": [
 				"ext.contentdroplets.toolbar.js",
 				"dialog/ContentDropletsDialog.js"
+			],
+			"styles": [
+				"stylesheets/droplets.css"
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore",
