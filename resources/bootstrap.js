@@ -109,24 +109,6 @@ ext.contentdroplets = {
 	_cache: {}
 };
 
-mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init', () => {
-	mw.libs.ve.targetLoader.addPlugin( () => {
-		const dfd = $.Deferred();
-		ext.contentdroplets.getDroplets().done( () => {
-			mw.loader.using( [ 'ext.contentdroplets.ve.toolbar' ], () => {
-				dfd.resolve();
-			}, () => {
-				dfd.reject();
-			} );
-		} ).fail( () => {
-			dfd.reject();
-		} );
-
-		return dfd.promise();
-	} );
-
-} );
-
 mw.hook( 've.collabpad.DropletsActivation' ).add( () => {
 	ve.init.mw.CollabTarget.static.toolbarGroups.push( {
 		include: [ 'contentdroplet-toolbar' ]
