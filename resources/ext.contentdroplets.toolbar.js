@@ -5,10 +5,10 @@ ve.ui.commandRegistry.register(
 	)
 );
 
-ve.ui.ContentDropletTool = function VeUiContentDropletTool( toolGroup ) {
-	ve.ui.ContentDropletTool.super.call( this, toolGroup );
+ve.ui.ContentDropletTool = function VeUiContentDropletTool() {
+	ve.ui.ContentDropletTool.super.apply( this, arguments );
 };
-OO.inheritClass( ve.ui.ContentDropletTool, ve.ui.ToolbarDialogTool );
+OO.inheritClass( ve.ui.ContentDropletTool, ve.ui.Tool );
 ve.ui.ContentDropletTool.static.name = 'contentdroplet-toolbar';
 ve.ui.ContentDropletTool.static.group = 'dialog';
 ve.ui.ContentDropletTool.static.title = mw.message( 'contentdroplets-toolbar-icon-title' ).text();
