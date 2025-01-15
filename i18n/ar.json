@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Alshamiri1"
+			"Alshamiri1",
+			"Meno25"
 		]
 	},
 	"contentdroplets-droplet-text-box-success": "نجاح رسالة",
@@ -40,5 +41,7 @@
 	"contentdroplet-dialog-action-insert": "إدراج",
 	"contentdroplets-droplet-code-name": "شفرة",
 	"contentdroplets-droplet-code-desc": "قسم مميز لأمثلة التعليمات البرمجية",
-	"contentdroplets-droplet-dialog-search-placeholder-label": "ابحث عن قطرات المحتوى"
+	"contentdroplets-droplet-dialog-search-placeholder-label": "ابحث عن قطرات المحتوى",
+	"contentdroplets-desc": "تكامل VisualEditor لإدراج مقتطفات محتوى محددة مسبقا",
+	"contentdroplets-toolbar-icon-title": "إضافة قطرات المحتوى"
 }
