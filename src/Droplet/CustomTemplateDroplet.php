@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\ContentDroplets\Droplet;
 
 use FormatJson;
-use Message;
+use MediaWiki\Message\Message;
 use RawMessage;
 
 class CustomTemplateDroplet extends TemplateDroplet {
