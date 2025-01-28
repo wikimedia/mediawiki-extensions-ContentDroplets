@@ -95,9 +95,9 @@ ext.contentdroplets = {
 
 				ext.contentdroplets._cache.droplets = instances;
 				dfd.resolve( ext.contentdroplets._cache );
-			}, () => {
+			}, ( err ) => {
 				ext.contentdroplets._cache = {};
-				console.error( 'ContentDroplets: Required RL modules failed to load' );
+				console.error( 'ContentDroplets: Required RL modules failed to load', err );
 			} );
 		} ).fail( ( error ) => {
 			ext.contentdroplets._cache = {};
