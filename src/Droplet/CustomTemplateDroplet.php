@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\ContentDroplets\Droplet;
 
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Message\Message;
 use RawMessage;
 
