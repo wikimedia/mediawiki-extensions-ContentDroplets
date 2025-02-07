@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\ContentDroplets\Droplet;
 
 use MediaWiki\Json\FormatJson;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Message\Message;
-use RawMessage;
 
 class CustomTemplateDroplet extends TemplateDroplet {
 
