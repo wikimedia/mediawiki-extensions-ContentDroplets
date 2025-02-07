@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\ContentDroplets\Tests;
 use MediaWiki\Extension\ContentDroplets\DropletProvider;
 use MediaWiki\Extension\ContentDroplets\IDropletDescription;
 use MediaWiki\Extension\ContentDroplets\IDropletSource;
+use MediaWiki\Language\RawMessage;
 use PHPUnit\Framework\TestCase;
-use RawMessage;
 
 class DropletProviderTest extends TestCase {
 	/**
