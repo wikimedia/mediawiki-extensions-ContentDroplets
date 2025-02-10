@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\ContentDroplets\Hook\BeforePageDisplay;
 
-use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use Skin;
 
