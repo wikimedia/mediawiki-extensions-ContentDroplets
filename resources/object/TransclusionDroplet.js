@@ -106,6 +106,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = fun
 				]
 			};
 		}
+
 		ext.contentdroplets.dm[ classname ].super.apply( this, arguments );
 	};
 
@@ -114,7 +115,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = fun
 	ext.contentdroplets.dm[ classname ].static.name = 'contentDroplet/' + classname;
 	ext.contentdroplets.dm[ classname ].static.matchTagNames = null;
 	ext.contentdroplets.dm[ classname ].static.tagName = 'span';
-	ext.contentdroplets.dm[ classname ].static.isContent = true;
+	ext.contentdroplets.dm[ classname ].static.isContent = false;
 	ext.contentdroplets.dm[ classname ].static.matchRdfaTypes = [ 'mw:Transclusion' ];
 	ext.contentdroplets.dm[ classname ].static.matchFunction = this.matchNode.bind( this );
 	if ( !suffix ) {
@@ -322,10 +323,23 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 		);
 	};
 
-	ext.contentdroplets.ui[ classname ].prototype.updateMwData = function ( mwData ) {
-		ext.contentdroplets.ui[ classname ].super.prototype.updateMwData.call( this, mwData );
+	ext.contentdroplets.ui[ classname ].prototype.getNewElement = function ( data ) {
+		return {
+			type: 'contentDroplet/' + droplet.getClassname(),
+			attributes: {
+				mw: {
+					parts: [
+						{
+							template: JSON.parse( droplet.getContent() )
+						}
+					]
+				}
+			}
+		};
+	};
 
-		mwData = droplet.updateMWData( this.dataToUpdate, mwData );
+	ext.contentdroplets.ui[ classname ].prototype.updateMwData = function ( mwData ) {
+		droplet.updateMWData( this.dataToUpdate, mwData );
 	};
 
 	ve.ui.windowFactory.register( ext.contentdroplets.ui[ classname ] );
