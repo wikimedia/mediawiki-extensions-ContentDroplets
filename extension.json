@@ -20,6 +20,11 @@
 				"ext.contentdroplets.ve.toolbar"
 			]
 		},
+		"CollabPads": {
+			"PluginModules": [
+				"ext.contentdroplets.ve.toolbar"
+			]
+		},
 		"ContentDroplets": {
 			"Droplets": {
 				"text-box-success": {
