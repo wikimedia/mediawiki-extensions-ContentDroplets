@@ -13,8 +13,10 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerOverrides = fun
 	this.registerContentEditable( 'Inline' );
 	this.registerContentEditable();
 	this.registerCommand();
-	this.registerContextItem();
-	this.registerInspector();
+	if ( !this.preload ) {
+		this.registerContextItem();
+		this.registerInspector();
+	}
 };
 
 ext.contentdroplets.object.TransclusionDroplet.prototype.matchNode = function ( domElement ) {

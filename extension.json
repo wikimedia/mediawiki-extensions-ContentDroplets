@@ -11,6 +11,9 @@
 		"MediaWiki": ">= 1.39.0"
 	},
 	"callback": "mwsInitComponents",
+	"ExtensionFunctions": [
+		"MediaWiki\\Extension\\ContentDroplets\\ResourceLoader\\DropletDefinitions::addPreloadModules"
+	],
 	"MessagesDirs": {
 		"ContentDroplets": "i18n"
 	},
@@ -173,6 +176,9 @@
 			"dependencies": [
 				"oojs-ui"
 			]
+		},
+		"z-ext.contentdroplets.definition.preload": {
+			"class": "MediaWiki\\Extension\\ContentDroplets\\ResourceLoader\\DropletDefinitions"
 		}
 	},
 	"ResourceFileModulePaths": {

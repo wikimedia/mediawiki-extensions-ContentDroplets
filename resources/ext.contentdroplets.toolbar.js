@@ -43,5 +43,5 @@ ve.ui.commandHelpRegistry.register( 'insert', 'template', {
 	label: OO.ui.deferMsg( 'contentdroplet-droplets-dialog-title' )
 } );
 
-// Load droplets in order to initialize their classes
+// Load full droplet data
 ext.contentdroplets.getDroplets();
