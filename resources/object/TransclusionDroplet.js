@@ -117,7 +117,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerDataModel = fun
 	ext.contentdroplets.dm[ classname ].static.name = 'contentDroplet/' + classname;
 	ext.contentdroplets.dm[ classname ].static.matchTagNames = null;
 	ext.contentdroplets.dm[ classname ].static.tagName = 'span';
-	ext.contentdroplets.dm[ classname ].static.isContent = false;
+	ext.contentdroplets.dm[ classname ].static.isContent = true;
 	ext.contentdroplets.dm[ classname ].static.matchRdfaTypes = [ 'mw:Transclusion' ];
 	ext.contentdroplets.dm[ classname ].static.matchFunction = this.matchNode.bind( this );
 	if ( !suffix ) {
