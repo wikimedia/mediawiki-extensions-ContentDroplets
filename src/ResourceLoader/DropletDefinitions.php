@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\ContentDroplets\ResourceLoader;
 
 use MediaWiki\Extension\ContentDroplets\DropletProvider;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Context;
 use MediaWiki\ResourceLoader\FileModule;
 
@@ -58,6 +59,9 @@ class DropletDefinitions extends FileModule {
 				$this->dependencies,
 				$droplet['rlModules']
 			);
+		}
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'BlueSpiceVisualEditorConnector' ) ) {
+			array_unshift( $this->dependencies, 'ext.bluespice.visualEditorConnector.tags' );
 		}
 		return parent::getDependencies( $context );
 	}

@@ -21,7 +21,7 @@ ve.ui.toolFactory.register( ve.ui.ContentDropletTool );
 
 ve.init.mw.Target.static.toolbarGroups.push( {
 	include: [ 'contentdroplet-toolbar' ],
-	classes: [ 've-ui-toolbar-group-content-droplets' ],
+	classes: [ 've-ui-toolbar-group-content-droplets' ]
 } );
 
 /**
@@ -44,4 +44,11 @@ ve.ui.commandHelpRegistry.register( 'insert', 'template', {
 } );
 
 // Load full droplet data
-ext.contentdroplets.getDroplets();
+if ( mw.loader.getState( 'ext.bluespice.visualEditorConnector.tags' ) === 'registered' ) {
+	// If BlueSpiceVisualEditorConnector is enabled (and not yet loaded), load it first
+	mw.loader.using( 'ext.bluespice.visualEditorConnector.tags', function() {
+		ext.contentdroplets.getDroplets();
+	} );
+} else {
+	ext.contentdroplets.getDroplets();
+}
