@@ -35,10 +35,10 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.updateMWData =
 		newData = newData || {};
 
 		// eslint-disable-next-line no-prototype-builtins
-		let template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
+		const template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
 			// eslint-disable-next-line no-prototype-builtins
-			mwData.parts[ 0 ].hasOwnProperty( 'template' ) ) ? mwData.parts[ 0 ].template : null,
-			key;
+			mwData.parts[ 0 ].hasOwnProperty( 'template' ) ) ? mwData.parts[ 0 ].template : null;
+		let key;
 		if ( !template ) {
 			return mwData;
 		}
@@ -258,10 +258,10 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 		return ext.contentdroplets.ui[ classname ].super.prototype.getSetupProcess.call(
 			this, data
 		).next( function () {
-			let attributes = this.selectedNode.element.attributes || {},
-				template = droplet.getTemplateFromData( attributes ),
-				params = template.params,
-				form, key;
+			const attributes = this.selectedNode.element.attributes || {};
+			const template = droplet.getTemplateFromData( attributes );
+			const params = template.params;
+			let key;
 
 			for ( key in params ) {
 				// eslint-disable-next-line no-prototype-builtins
@@ -272,7 +272,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 					params[ key ] = params[ key ].wt;
 				}
 			}
-			form = droplet.getForm( params );
+			const form = droplet.getForm( params );
 			form.connect( this, {
 				renderComplete: 'updateSize',
 				change: 'onValueUpdated'
@@ -325,7 +325,7 @@ ext.contentdroplets.object.TransclusionDroplet.prototype.registerInspector = fun
 		);
 	};
 
-	ext.contentdroplets.ui[ classname ].prototype.getNewElement = function ( data ) {
+	ext.contentdroplets.ui[ classname ].prototype.getNewElement = function () {
 		return {
 			type: 'contentDroplet/' + droplet.getClassname(),
 			attributes: {

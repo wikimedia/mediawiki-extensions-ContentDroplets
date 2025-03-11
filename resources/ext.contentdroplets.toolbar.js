@@ -46,7 +46,7 @@ ve.ui.commandHelpRegistry.register( 'insert', 'template', {
 // Load full droplet data
 if ( mw.loader.getState( 'ext.bluespice.visualEditorConnector.tags' ) === 'registered' ) {
 	// If BlueSpiceVisualEditorConnector is enabled (and not yet loaded), load it first
-	mw.loader.using( 'ext.bluespice.visualEditorConnector.tags', function() {
+	mw.loader.using( 'ext.bluespice.visualEditorConnector.tags', () => {
 		ext.contentdroplets.getDroplets();
 	} );
 } else {

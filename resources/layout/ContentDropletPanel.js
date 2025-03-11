@@ -94,8 +94,8 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.selectDroplet =
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.dropletsFromSource =
 	function ( keys, source ) {
-		let filtered = {},
-			sourceKey;
+		const filtered = {};
+		let sourceKey;
 		for ( sourceKey in source ) {
 			// eslint-disable-next-line no-prototype-builtins
 			if ( !source.hasOwnProperty( sourceKey ) ) {
@@ -120,9 +120,9 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.indexDroplets = function ( 
 };
 
 ext.contentdroplets.ui.ContentDropletPanel.prototype.onInput = function ( input ) {
-	let toShow = [],
-		allPage = this.bookletLayout.getPage( '_all' ),
-		key;
+	const toShow = [];
+	const allPage = this.bookletLayout.getPage( '_all' );
+	let key;
 	input = input.toLocaleLowerCase().trim();
 
 	if ( input ) {

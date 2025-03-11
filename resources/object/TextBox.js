@@ -45,10 +45,10 @@ ext.contentdroplets.object.TextBox.prototype.getFormItems = function () {
 };
 
 ext.contentdroplets.object.TextBox.prototype.getDropdownData = function () {
-
-	let types = require( './textboxtypes.json' ), // eslint-disable-line no-shadow
-		data = [], type; // eslint-disable-line no-shadow
-	if ( types !== [] ) {
+	const types = require( './textboxtypes.json' ); // eslint-disable-line no-shadow
+	const data = [];
+	let type; // eslint-disable-line no-shadow
+	if ( Array.isArray( types ) ) {
 		for ( type in types ) {
 			data.push( {
 				data: types[ type ],
@@ -182,8 +182,9 @@ ext.contentdroplets.object.TextBox.prototype.registerDataModel = function ( suff
 };
 
 // Register all droplets that use this class
-// eslint-disable-next-line vars-on-top, no-implicit-globals
-var types = require( './textboxtypes.json' ), type;
+
+const types = require( './textboxtypes.json' );
+let type;
 for ( type in types ) {
 	ext.contentdroplets.registry.register( 'text-box-' + types[ type ], ext.contentdroplets.object.TextBox );
 }

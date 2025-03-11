@@ -55,9 +55,9 @@ ext.contentdroplets = {
 		const dfd = $.Deferred();
 
 		ext.contentdroplets.api.getDroplets().done( ( data ) => {
-			let instances = {},
-				modules = [ 'ext.forms.standalone' ],
-				droplets = data.droplets,
+			const instances = {};
+			const droplets = data.droplets;
+			let modules = [ 'ext.forms.standalone' ],
 				key, config, dropletClass;
 
 			ext.contentdroplets._cache.categories = data.categories;

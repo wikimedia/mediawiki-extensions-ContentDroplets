@@ -15,20 +15,19 @@ function preload() {
 		const dropletClass = ext.contentdroplets.registry.lookup( key );
 		if ( !dropletClass ) {
 			if ( config.content.indexOf( 'target' ) !== -1 ) {
-				new ext.contentdroplets.object.TransclusionDroplet( config );
+				new ext.contentdroplets.object.TransclusionDroplet( config ); // eslint-disable-line no-new
 				return;
 			}
-			new ext.contentdroplets.object.Droplet( config );
+			new ext.contentdroplets.object.Droplet( config ); // eslint-disable-line no-new
 		} else {
-			// eslint-disable-next-line new-cap
-			new dropletClass( config );
+			new dropletClass( config ); // eslint-disable-line new-cap, no-new
 		}
 	}
 }
 
 if ( mw.loader.getState( 'ext.bluespice.visualEditorConnector.tags' ) === 'registered' ) {
 	// If BlueSpiceVisualEditorConnector is enabled (and not yet loaded), load it first
-	mw.loader.using( 'ext.bluespice.visualEditorConnector.tags', function() {
+	mw.loader.using( 'ext.bluespice.visualEditorConnector.tags', () => {
 		preload();
 	} );
 } else {
