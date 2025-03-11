@@ -130,6 +130,8 @@
 				"object/TransclusionDroplet.js"
 			],
 			"dependencies": [
+				"ext.visualEditor.mwtransclusion",
+				"oojs",
 				"oojs-ui"
 			]
 		},
