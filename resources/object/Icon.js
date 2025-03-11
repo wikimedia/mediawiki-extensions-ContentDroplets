@@ -42,10 +42,10 @@ ext.contentdroplets.object.Icon.prototype.updateMWData = function ( newData, mwD
 	newData = newData || {};
 
 	// eslint-disable-next-line no-prototype-builtins
-	let template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
+	const template = ( mwData.hasOwnProperty( 'parts' ) && mwData.parts.length > 0 &&
 		// eslint-disable-next-line no-prototype-builtins
-		mwData.parts[ 0 ].hasOwnProperty( 'template' ) ) ? mwData.parts[ 0 ].template : null,
-		key;
+		mwData.parts[ 0 ].hasOwnProperty( 'template' ) ) ? mwData.parts[ 0 ].template : null;
+	let key;
 	if ( !template ) {
 		return mwData;
 	}

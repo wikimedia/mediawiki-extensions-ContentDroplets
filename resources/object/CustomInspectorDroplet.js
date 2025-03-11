@@ -34,8 +34,8 @@ ext.contentdroplets.object.CustomInspectorDroplet.prototype.getForm = function (
 
 	form.connect( this, {
 		initComplete: function ( f ) {
-			let inputs = f.getItems().inputs,
-				inputKey;
+			const inputs = f.getItems().inputs;
+			let inputKey;
 
 			for ( inputKey in inputs ) {
 				// eslint-disable-next-line no-prototype-builtins
