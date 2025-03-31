@@ -57,11 +57,11 @@ class RegistrySource implements IDropletSource {
 	 */
 	private function checkRequirements( $requirements ) {
 		$allow = true;
-		foreach( $requirements as $requirement => $value ) {
+		foreach ( $requirements as $requirement => $value ) {
 			if ( !ExtensionRegistry::getInstance()->isLoaded( $requirement ) ) {
 				$allow = false;
 			}
-		};
+		}
 		return $allow;
 	}
 }
