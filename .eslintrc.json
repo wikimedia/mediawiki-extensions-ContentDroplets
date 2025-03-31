@@ -14,7 +14,8 @@
 		"mediawiki/class-doc": "off",
 		"no-implicit-globals": "off",
 		"es-x/no-array-prototype-includes": "off",
-		"es-x/no-object-values": "off"
+		"es-x/no-object-values": "off",
+		"no-jquery/no-done-fail": "warn"
 	},
 	"parserOptions": {
 		"ecmaVersion": 2017
