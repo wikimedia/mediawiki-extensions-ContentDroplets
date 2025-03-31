@@ -58,7 +58,10 @@
 					"class": "\\MediaWiki\\Extension\\ContentDroplets\\Droplet\\IconDroplet"
 				},
 				"code": {
-					"class": "\\MediaWiki\\Extension\\ContentDroplets\\Droplet\\CodeDroplet"
+					"class": "\\MediaWiki\\Extension\\ContentDroplets\\Droplet\\CodeDroplet",
+					"requires": {
+						"SyntaxHighlight": "*"
+					}
 				}
 			}
 		},
