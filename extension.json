@@ -76,6 +76,9 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\ContentDroplets\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Extension\\ContentDroplets\\Tests\\": "tests/phpunit/"
+	},
 	"ResourceModules": {
 		"ext.contentdroplets.ve.toolbar": {
 			"scripts": [
