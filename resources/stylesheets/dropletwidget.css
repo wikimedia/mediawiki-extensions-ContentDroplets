@@ -13,6 +13,7 @@
 
 .droplet .droplet-title {
 	font-weight: bold;
+	display: block;
 }
 
 .droplet .droplet-text {
