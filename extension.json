@@ -133,7 +133,8 @@
 				"bootstrap.js",
 				"object/Droplet.js",
 				"object/CustomInspectorDroplet.js",
-				"object/TransclusionDroplet.js"
+				"object/TransclusionDroplet.js",
+				"object/ParserFunctionDroplet.js"
 			],
 			"dependencies": [
 				"ext.visualEditor.mwtransclusion",
