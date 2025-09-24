@@ -13,7 +13,7 @@ ext.contentdroplets.ui.AllDropletsPage.prototype.filter = function ( keys ) {
 			continue;
 		}
 		this.widgets[ key ].$element.show();
-		if ( keys.indexOf( key ) === -1 ) {
+		if ( !keys.includes( key ) ) {
 			this.widgets[ key ].$element.hide();
 		}
 	}

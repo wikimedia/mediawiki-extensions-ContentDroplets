@@ -14,7 +14,7 @@ function preload() {
 		config.preload = true;
 		const dropletClass = ext.contentdroplets.registry.lookup( key );
 		if ( !dropletClass ) {
-			if ( config.content.indexOf( 'target' ) !== -1 ) {
+			if ( config.content.includes( 'target' ) ) {
 				new ext.contentdroplets.object.TransclusionDroplet( config ); // eslint-disable-line no-new
 				return;
 			}

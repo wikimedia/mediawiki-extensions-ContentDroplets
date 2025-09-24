@@ -101,7 +101,7 @@ ext.contentdroplets.ui.ContentDropletPanel.prototype.dropletsFromSource =
 			if ( !source.hasOwnProperty( sourceKey ) ) {
 				continue;
 			}
-			if ( keys.indexOf( sourceKey ) !== -1 ) {
+			if ( keys.includes( sourceKey ) ) {
 				filtered[ sourceKey ] = source[ sourceKey ];
 			}
 		}
