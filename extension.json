@@ -179,8 +179,11 @@
 			"messages": [
 				"contentdroplets-droplet-icon-class-label",
 				"contentdroplets-droplet-icon-font-size-label",
+				"contentdroplets-droplet-icon-font-size-help",
 				"contentdroplets-droplet-icon-color-label",
-				"contentdroplets-droplet-icon-orientation-label"
+				"contentdroplets-droplet-icon-color-help",
+				"contentdroplets-droplet-icon-orientation-label",
+				"contentdroplets-droplet-icon-orientation-help"
 			],
 			"dependencies": [
 				"oojs-ui"
