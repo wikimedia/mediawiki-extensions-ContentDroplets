@@ -137,6 +137,7 @@
 				"object/ParserFunctionDroplet.js"
 			],
 			"dependencies": [
+				"ext.forms.standalone",
 				"ext.visualEditor.mwtransclusion",
 				"oojs",
 				"oojs-ui"
