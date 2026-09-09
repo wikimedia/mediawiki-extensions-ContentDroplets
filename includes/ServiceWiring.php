@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\ContentDroplets\DropletProvider;
+use MediaWiki\Extension\ContentDroplets\DropletSource\HookSource;
 use MediaWiki\Extension\ContentDroplets\DropletSource\RegistrySource;
 use MediaWiki\Extension\ContentDroplets\DropletSource\WikiPageSource;
 use MediaWiki\MediaWikiServices;
@@ -16,6 +17,9 @@ return [
 			'global-var' => new RegistrySource(
 				$services->getMainConfig()->get( 'ContentDropletsDroplets' ),
 				$services->getObjectFactory()
+			),
+			'hook' => new HookSource(
+				$services->getHookContainer()
 			),
 			'wikipage' => new WikiPageSource(
 				$services->getWikiPageFactory()->newFromTitle(
