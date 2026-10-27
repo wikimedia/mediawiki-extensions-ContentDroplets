@@ -26,6 +26,6 @@ return [
 					$services->getTitleFactory()->makeTitle( NS_MEDIAWIKI, 'ContentDroplets.json' )
 				)
 			),
-		] );
+		], $services->getMainConfig()->get( 'ContentDropletsExcludeList' ) );
 	}
 ];

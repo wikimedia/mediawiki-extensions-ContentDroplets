@@ -215,6 +215,9 @@
 		}
 	],
 	"config": {
+		"ContentDropletsExcludeList": {
+			"value": []
+		},
 		"ContentDropletsDroplets": {
 			"value": {}
 		}

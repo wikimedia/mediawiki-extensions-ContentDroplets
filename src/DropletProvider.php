@@ -11,12 +11,16 @@ class DropletProvider {
 	private $sources;
 	/** @var IDropletDescription[] */
 	private $droplets;
+	/** @var string[] */
+	private $excludedDroplets;
 
 	/**
 	 * @param IDropletSource $sources
+	 * @param string[] $excludedDroplets
 	 */
-	public function __construct( array $sources ) {
+	public function __construct( array $sources, array $excludedDroplets = [] ) {
 		$this->sources = $sources;
+		$this->excludedDroplets = $excludedDroplets;
 	}
 
 	/**
@@ -39,6 +43,10 @@ class DropletProvider {
 			foreach ( $this->sources as $key => $source ) {
 				$this->droplets = array_merge( $this->droplets, $source->getDroplets() );
 			}
+			$this->droplets = array_diff_key(
+				$this->droplets,
+				array_fill_keys( $this->excludedDroplets, true )
+			);
 		}
 	}
 
