@@ -56,6 +56,13 @@ This page holds JSON definition of droplets, eg for templates and tags:
 Duplicate droplet keys will be override in the order described above, global variable overrides attribute registry,
 and wikipage overrides global page.
 
+## Excluding droplets
+
+Set `$wgContentDropletsExcludeList` to an array of droplet keys in `LocalSettings.php` to
+hide selected droplets from the provider, including the VisualEditor droplet definitions:
+
+	$wgContentDropletsExcludeList = [ 'subpages', 'myTemplateDroplet' ];
+
 # Implementing a droplet
 
 Droplet implementation is done on the server side, with additional flexibility possible by implementing a client-side class.

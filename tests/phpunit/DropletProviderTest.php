@@ -26,6 +26,15 @@ class DropletProviderTest extends TestCase {
 	}
 
 	/**
+	 * @covers \MediaWiki\Extension\ContentDroplets\DropletProvider::getDroplets
+	 */
+	public function testExcludedDroplets() {
+		$provider = new DropletProvider( $this->getSources(), [ 'dummy', 'droplet1' ] );
+
+		$this->assertSame( [ 'foo', 'droplet2' ], array_keys( $provider->getDroplets() ) );
+	}
+
+	/**
 	 * @return array
 	 */
 	private function getSources() {
