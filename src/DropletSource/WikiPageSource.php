@@ -9,7 +9,7 @@ use MediaWiki\Content\JsonContent;
 use MediaWiki\Extension\ContentDroplets\Droplet\CustomTagDroplet;
 use MediaWiki\Extension\ContentDroplets\Droplet\CustomTemplateDroplet;
 use MediaWiki\Extension\ContentDroplets\IDropletSource;
-use WikiPage;
+use MediaWiki\Page\WikiPage;
 
 class WikiPageSource implements IDropletSource {
 	/** @var WikiPage */
