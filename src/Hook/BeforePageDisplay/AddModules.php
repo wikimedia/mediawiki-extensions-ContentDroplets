@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\ContentDroplets\Hook\BeforePageDisplay;
 
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
-use Skin;
+use MediaWiki\Skin\Skin;
 
 class AddModules implements BeforePageDisplayHook {
 
