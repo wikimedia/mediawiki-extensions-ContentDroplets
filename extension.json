@@ -199,11 +199,15 @@
 		"remoteExtPath": "ContentDroplets/resources"
 	},
 	"Hooks": {
-		"BeforePageDisplay": "addModules"
+		"BeforePageDisplay": "addModules",
+		"MediaWikiServices": "registerMCPTools"
 	},
 	"HookHandlers": {
 		"addModules": {
 			"class": "MediaWiki\\Extension\\ContentDroplets\\Hook\\BeforePageDisplay\\AddModules"
+		},
+		"registerMCPTools": {
+			"class": "MediaWiki\\Extension\\ContentDroplets\\Hook\\RegisterMCPTools"
 		}
 	},
 	"RestRoutes": [
